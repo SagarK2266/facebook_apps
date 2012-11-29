@@ -1,3 +1,3 @@
 <?php
-define('DRUPAL_MODE', 'off');
+define('DRUPAL_MODE', 'on');
 ?>

@@ -52,6 +52,12 @@ define('way2smsConfigArray',  serialize(array(
 if(!defined('FB_SMS_FOLDER'))
 {
 	define('FB_SMS_FOLDER', 'drupal7_fb_base');
-	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].'/'.FB_SMS_FOLDER.'_php_files/');
 }
+if(!defined('FB_SMS_FOLDER'))
+{
+	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].'/'.FB_SMS_CORE_FILES_FOLDER);
+}
+
+define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files/');
+define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER);
 ?>

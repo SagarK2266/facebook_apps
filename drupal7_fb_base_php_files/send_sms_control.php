@@ -1,7 +1,5 @@
 <?php
-include_once('./common/config.php');
-include_once('./common/commonfunctions.php');
-
+include_once('include_files.php');
 
 //Get the parameters
 $fromname = trim($_REQUEST['fromname']);

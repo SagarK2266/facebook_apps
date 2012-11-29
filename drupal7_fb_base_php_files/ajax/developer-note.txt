@@ -1,0 +1,4 @@
+/* 
+This folder should contain the the php files that does a single functionality based on a ajax call.
+eg. update-startup-page.php: updates the startup page in the database
+*/

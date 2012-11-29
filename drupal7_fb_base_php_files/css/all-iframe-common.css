@@ -1,0 +1,56 @@
+body
+{
+	font-family: Georgia,'Palatino Linotype','Book Antiqua','URW Palladio L',Baskerville,Meiryo,'Hiragino Mincho Pro','MS PMincho',serif;
+}
+
+textarea, input, fieldset
+{
+	-webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+input
+{
+	height: 25px;
+}
+
+.notice
+{
+	color: red;
+}
+
+.form-submit
+{
+	
+}
+.form-submit
+{
+	border-top: 1px solid #0E080D; 
+	border-bottom: 1px solid #0E080D; 
+	border-left: 1px solid #0E080D;
+	border-right: 1px solid #0E080D; 
+	background: #4A1946; 
+	background: -webkit-gradient(linear, left top, left bottom, from(#81467A), to(#4A1946)); 
+	background: -moz-linear-gradient(top, #81467A, #4A1946); 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;
+	border-radius: 5px; 
+	-webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	-moz-box-shadow: rgba(0,0,0,1) 0 1px 0; 
+	box-shadow: rgba(0,0,0,1) 0 1px 0; 
+	text-shadow: rgba(0,0,0,.4) 0 1px 0; 
+	color: #ffffff; font-size: 12px; 
+	font-family: 'verdana', Helvetica, Arial, Sans-Serif; 
+	text-decoration: none; 
+	font-weight:normal;
+	padding:0px;
+	text-align:center;
+	vertical-align: middle; 
+	width: 100px;
+}
+
+#edit-message
+{
+	padding:5px;
+}

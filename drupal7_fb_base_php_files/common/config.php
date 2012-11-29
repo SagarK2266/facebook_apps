@@ -18,10 +18,10 @@ if (!isset($_SESSION))
 //Add only facebook related constants.
 class FacebookConfiguration 
 {
-	const APP_ID = "284004578387380";
-	const ACCESS_TOKEN = "2091a3e5a11255a9fed1cf47c87a6e0c";
-	const CANVAS_PAGE_URL = "http://apps.facebook.com/284004578387380/";
-	const THE_FACEBOOK_URL = 'http://localhost/drupal7_fb_base/';	
+	const APP_ID = "340247136073366";
+	const ACCESS_TOKEN = "9547fb02a9da510f4af8cbdf43c3c0d4";
+	const CANVAS_PAGE_URL = "http://apps.facebook.com/340247136073366/";
+	const THE_FACEBOOK_URL = 'http://test.lcl/drupal7_fb_base/';
 }
 
 //Add only app related constants.

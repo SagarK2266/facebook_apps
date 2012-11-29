@@ -57,7 +57,7 @@ if(AppConfig::PERMISSION_EMAIL_ADDRESS == 'true')
 }
 
 $my_url = FacebookConfiguration::CANVAS_PAGE_URL . "fb_sms_index.php";
-$url = 'https://www.facebook.com/dialog/oauth?scope='.$appAuthScope.'&redirect_uri='.urlencode($my_url).'&client_id='.$app_id;
+$url = 'https://www.facebook.com/dialog/oauth?'.'scope='.urlencode($appAuthScope).'&redirect_uri='.urlencode($my_url).'&client_id='.$app_id;
 
 //echo $url; exit;
 ?>
@@ -66,7 +66,7 @@ $url = 'https://www.facebook.com/dialog/oauth?scope='.$appAuthScope.'&redirect_u
 <script type="text/javascript">
 function redirect(url)
 {
-    top.location = url
+    top.location = url;
 }
 </script>
 </head>

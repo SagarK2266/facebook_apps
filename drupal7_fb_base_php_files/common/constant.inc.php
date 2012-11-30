@@ -39,7 +39,6 @@ define('EMAIL_TO', 'sagarkelkar1234@gmail.com');
 /*
  * Session constants.
 */
-define('SESSION_FIRST_TIME_INSTALLATION', '');
 
 define('SESSION_USER_INFO', 'SESSION_userInfo');
 define('SESSION_FRIEND_LIST', 'SESSION_friendList');

@@ -8,7 +8,7 @@
 	<thead>
 		<tr>
 			<td scope="col">
-			<a class="active" href="../drupal7_fb_base_php_files/sent_sms.php" target="mid_div" title="Sent items">Sent Items</a></td>		
+			<a class="active" href="../drupal7_fb_base_php_files/ajaxCrude/sent_sms.php" target="mid_div" title="Sent SMS">Sent SMS</a></td>
 			<td scope="row">
 				<span style="color:#800080;"><span style="background-color:#ee82ee;">Hi, Alice</span></span></td>
 			<td scope="col">

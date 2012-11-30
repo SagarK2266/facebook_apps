@@ -53,8 +53,8 @@
 		}
 
 		if ($ajaxAction == 'update'){
-			//$val = str_replace("<P>","<br /><br />", $val);
-			//$val = str_replace("<p>","<br /><br />", $val);
+			//$val = str_replace("<P>","<br />", $val);
+			//$val = str_replace("<p>","<br />", $val);
 
 			//$val = str_replace("</P>","", $val);
 			//$val = str_replace("</p>","", $val);
@@ -1235,7 +1235,7 @@ class ajaxCRUD{
 
             //paging links
             if ($totalpage > 1){
-                $table_html .= "<br /><div style='width: 800px; position: relative; left: 50%; margin-left: -400px; text-align: center;'><center> $links </center></div><br /><br />";
+                $table_html .= "<div style='width: 800px; position: relative; left: 50%; margin-left: -400px; text-align: center;'><center> $links </center></div><br />";
             }
 
         }//if rows > 0

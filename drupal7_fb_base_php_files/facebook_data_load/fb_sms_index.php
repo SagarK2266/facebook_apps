@@ -21,18 +21,6 @@ if($accessDeniedError != "")
 
 if($code)
 {
-	
-	/*printFormattedArray($facebook); 
-	$user_id = $facebook->getUser(); 
-	echo $user_id; exit;
-	$access_token = $facebook->getExtendedAccessToken();	
-	if($access_token == false)
-	{
-		$access_token = $facebook->getAccessToken();
-	}
-	/*TODO: Update database.*/
-	/*$dbAction = CheckAndUpdateUserDatabase($user_id, $access_token,$facebook);
-	SetSessionVal(SESSION_userDbAction, $dbAction); */
 	include_once('friends-load-data.php');
 }
 else

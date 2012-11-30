@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^--versioned/[0-9]+/(.*)$ $1 [L]

@@ -33,7 +33,6 @@ define('FILENAME_USER_INFO', './_data/user-info.dat'); //getcwd().
 define('FILENAME_FRIEND_LIST', './_data/friend-list.dat');
 define('FILENAME_FRIEND_INFO', './_data/friend-info.dat');
 /*
-define('LANDING_PAGE', 'landing-page.php');		//This file will load basic layout of application.
 define('EMAIL_TO', 'sagarkelkar1234@gmail.com');
 */
 
@@ -47,8 +46,7 @@ define('SESSION_FRIEND_LIST', 'SESSION_friendList');
 define('SESSION_FRIENDS_DATA_ALL', 'SESSION_friendDataAll');
 define('SESSION_USER_ACCESS_TOKEN', 'SESSION_userAccessToken');
 define('SESSION_TRACE_APP_LOAD', 'TraceAppLoad');
-/*define('SESSION_userDbAction', 'userDbAction');
+define('SESSION_userDbAction', 'userDbAction');	//TRack that user record was updated or inserted.
 define('SESSION_FIRST_TIME_INSTALLATION', 'appInstallation'); // used to store the first time app installation
-*/
 
 ?>

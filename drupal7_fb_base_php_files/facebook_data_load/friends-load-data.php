@@ -33,6 +33,12 @@ if(!isNonFacebookDeployment())
 	setSessionVal(SESSION_USER_ACCESS_TOKEN, $UserAccessToken, $serialize = true);
 }
 
+
+/* Update database.
+$dbAction = CheckAndUpdateUserDatabase($user_id, $UserAccessToken,$facebook);
+SetSessionVal(SESSION_userDbAction, $dbAction);
+*/
+
 /*
  * Store the user info
  */

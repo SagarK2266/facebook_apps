@@ -4,8 +4,8 @@ if(!headers_sent())
 {
 	header('P3P:CP="IDC DSP COR ADM DEVi TAIi PSA PSD IVAi IVDi CONi HIS OUR IND CNT"');
 }
-ini_set('log_errors',"On");
-ini_set('error_log',"_error.log");
+//ini_set('log_errors',"On");
+//ini_set('error_log',"_error.log");
 //ini_set('display_errors', "Off");
 
 error_reporting(-1); 
@@ -49,15 +49,16 @@ define('way2smsConfigArray',  serialize(array(
 )));
 //}
 
+/*CONSTANT TO HAVE BETTER PATH IN THE CODE*/
+define('DS', DIRECTORY_SEPARATOR);
 if(!defined('FB_SMS_FOLDER'))
 {
 	define('FB_SMS_FOLDER', 'drupal7_fb_base');
 }
-if(!defined('FB_SMS_FOLDER'))
+define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files');
+if(!defined('CUSTOM_PHP_FILES'))
 {
-	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].'/'.FB_SMS_CORE_FILES_FOLDER);
+	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].FB_SMS_CORE_FILES_FOLDER.DS);
 }
-
-define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files/');
-define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER);
+define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER.'/');
 ?>

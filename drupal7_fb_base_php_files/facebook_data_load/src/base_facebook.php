@@ -795,6 +795,9 @@ abstract class BaseFacebook
     }
 
     curl_setopt_array($ch, $opts);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    
     $result = curl_exec($ch);
 
     if (curl_errno($ch) == 60) { // CURLE_SSL_CACERT
@@ -1020,7 +1023,6 @@ abstract class BaseFacebook
    *                      by a failed API call.
    */
   protected function throwAPIException($result) {
-  	//printFormattedArray($result); exit;
     $e = new FacebookApiException($result);
     switch ($e->getType()) {
       // OAuth 2.0 Draft 00 style

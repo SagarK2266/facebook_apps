@@ -7,10 +7,10 @@
  */
 function getUserInfo($user, $facebook)
 {
-	printFormattedArray($facebook);	echo $user;
+	//printFormattedArray($facebook);	echo $user;
 	//$userInfo = $facebook->api('/'.$user);
-	$userInfo = $facebook->api('/me');
-	printFormattedArray($userInfo); exit;
+	$userInfo = $facebook->api("/$user");
+	//printFormattedArray($userInfo); exit;
 	
 	return $userInfo;
 }

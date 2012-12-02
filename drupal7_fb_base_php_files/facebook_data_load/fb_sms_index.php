@@ -1,7 +1,8 @@
 <?php 
-include_once('../common/config.php');
-include_once('../common/commonfunctions.php');
-include_once('fb-app-data.php');  
+include_once(CUSTOM_PHP_FILES.'common'.DS.'config.php');
+include_once(CUSTOM_PHP_FILES.'common'.DS.'constant.inc.php');
+include_once(CUSTOM_PHP_FILES.'common'.DS.'commonfunctions.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-app-data.php');  
 //include_once('bs-user.php'); //TODO: Database operations 
 
 $code = $_REQUEST["code"];

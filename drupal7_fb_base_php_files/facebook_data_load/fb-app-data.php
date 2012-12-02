@@ -5,9 +5,7 @@
  * Data may be online data or offline data.
  */
 
-$dir = getcwd();
-
-include_once($dir.DIRECTORY_SEPARATOR. 'src'.DIRECTORY_SEPARATOR.'facebook.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'src'.DS.'facebook.php');
 //Create our Application instance (replace this with your appId and secret).
 $facebook = new Facebook(array(
   'appId'  => FacebookConfiguration::APP_ID,

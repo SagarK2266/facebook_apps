@@ -2,10 +2,11 @@
 /*
  * This code will be executed before drupal code is loaded.
  */
-include_once('../common/config.php');
-include_once('../common/constant.inc.php');
-include_once('../common/commonfunctions.php');
-include_once('fb-app-data.php');
+
+include_once(CUSTOM_PHP_FILES.DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'config.php');
+include_once(CUSTOM_PHP_FILES.DS.'common'.DS.'commonfunctions.php');
+include_once(CUSTOM_PHP_FILES.DS.'common'.DS.'constant.inc.php');
+include_once(CUSTOM_PHP_FILES.DS.'facebook_data_load'.DS.'fb-app-data.php');
 
 if(isNonFacebookDeployment())
 {

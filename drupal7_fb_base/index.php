@@ -1,11 +1,13 @@
 <?php
 //TODO : Write a php script which will create this file and contents will be written so that site can be run in drupal mode when required.
 require 'drupal_mode_flag.php';
+require '../drupal7_fb_base_php_files/common/config.php';
 
 if(DRUPAL_MODE == 'off')
 {
  	$url = '../drupal7_fb_base_php_files/facebook_data_load/index.php';
-	header('location:'.$url);
+ 	include_once ($url);
+	//header('location:'.$url);
 	exit;
 }
 else

@@ -29,6 +29,7 @@ define('IMAGE_PATH', 'http://paramss.com/fb/friends-trivia-demographics-mania/')
 define('APP_BIRTHDAY_WALL_PICTURE', 'http://paramss.com/fb/images/ftdm/postonwall/set000/birthday.jpg');
 define('TEMPORARY_STRING', '@#~#@');
 */
+define('FRIEND_LOAD_DATA_LOT', '50');
 define('FILENAME_USER_INFO', './_data/user-info.dat'); //getcwd().
 define('FILENAME_FRIEND_LIST', './_data/friend-list.dat');
 define('FILENAME_FRIEND_INFO', './_data/friend-info.dat');
@@ -47,5 +48,6 @@ define('SESSION_USER_ACCESS_TOKEN', 'SESSION_userAccessToken');
 define('SESSION_TRACE_APP_LOAD', 'TraceAppLoad');
 define('SESSION_userDbAction', 'userDbAction');	//TRack that user record was updated or inserted.
 define('SESSION_FIRST_TIME_INSTALLATION', 'appInstallation'); // used to store the first time app installation
+
 
 ?>

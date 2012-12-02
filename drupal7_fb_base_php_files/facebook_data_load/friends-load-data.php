@@ -1,12 +1,9 @@
 <?php
-include_once('../common/config.php');
-include_once('../common/constant.inc.php');
-include_once('../common/commonfunctions.php');
-include_once('fb-app-data.php');
-include_once('fb-user.php');
-include_once('fb-friend.php');
-include_once('_handle_facebook_data.php');
-include_once('fb-permission.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-app-data.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-user.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-friend.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'_handle_facebook_data.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-permission.php');
 
 
 //Set access token to session

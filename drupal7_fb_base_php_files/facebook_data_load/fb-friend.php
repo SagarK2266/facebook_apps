@@ -39,8 +39,6 @@ function getFriendsData($UserAccessToken, $friendList)
 	$friendIdList = "";
 	//print_r($friendList);
 	$friendCount = count($friendList);
-	//echo "friendCount: $friendCount<br/>"; 
-	//return $friendsData;
 	//load FRIEND_LOAD_DATA_LOT friend id at a time and show progress 
 	foreach ($friendList as $friend)
 	{
@@ -52,24 +50,23 @@ function getFriendsData($UserAccessToken, $friendList)
 		if ((($friendIndex % FRIEND_LOAD_DATA_LOT) == 0) || $friendIndex == $friendCount )
 		{
 			
-			//echo "value of  friendIdListCurrent: ";
-			//print_r($friendIdListCurrent);
 			$friendsDataCurrent = loadFriendsData($friendIdListCurrent, $UserAccessToken);
-			//$friendsData = array_merge($friendsData, $friendsDataCurrent);
+			$friendsData = array_merge($friendsData, $friendsDataCurrent);
+			/*
 			try			
 			{
 				if(is_array($friendsData) && is_array($friendsDataCurrent))
 				{
 					$friendsData = $friendsData + $friendsDataCurrent;	//Here + is array union operator
 				}
-				/*//Intentionally generate exception for some user.
+				//Intentionally generate exception for some user.
 				$userInfo = getUserInfoFromSession();
 				$userId = $userInfo['id'];
 				if($userId == "100003700883923") 
 				{
 					throw new Exception("Exception in fb-friend.php");
 				}
-				*/
+				
 			}
 			catch(Exception $e)
 			{
@@ -78,7 +75,7 @@ function getFriendsData($UserAccessToken, $friendList)
 				$traceLog = "Error occured in getFriendsData: ".$e->getMessage() . ": User = " . $userId . ": Friend Count = " . $friendCount . ": Friend Index = " . $friendIndex;
 				appendToAutoPublishLog("$traceLog<br/>",$postOutSideApp=true);
 				continue;
-			}	
+			}*/	
 			$friendIdList = $friendIdList . "," . $friendIdListCurrent;
 /*			if($progressbar != "")
 			{

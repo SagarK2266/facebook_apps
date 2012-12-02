@@ -6,14 +6,10 @@ require '../drupal7_fb_base_php_files/common/config.php';
 if(DRUPAL_MODE == 'off')
 {
  	$url = '../drupal7_fb_base_php_files/facebook_data_load/index.php';
- 	include_once ($url);
-	//header('location:'.$url);
-	exit;
+ 	include ($url);
 }
 else
 {
-?>
-<?php
 
 /** Original code of this file. *******
 

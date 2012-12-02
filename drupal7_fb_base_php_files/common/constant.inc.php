@@ -30,9 +30,9 @@ define('APP_BIRTHDAY_WALL_PICTURE', 'http://paramss.com/fb/images/ftdm/postonwal
 define('TEMPORARY_STRING', '@#~#@');
 */
 define('FRIEND_LOAD_DATA_LOT', '50');
-define('FILENAME_USER_INFO', './_data/user-info.dat'); //getcwd().
-define('FILENAME_FRIEND_LIST', './_data/friend-list.dat');
-define('FILENAME_FRIEND_INFO', './_data/friend-info.dat');
+define('FILENAME_USER_INFO', getcwd().DIRECTORY_SEPARATOR.'_data'.DIRECTORY_SEPARATOR.'user-info.dat');
+define('FILENAME_FRIEND_LIST', getcwd().DIRECTORY_SEPARATOR.'_data'.DIRECTORY_SEPARATOR.'friend-list.dat');
+define('FILENAME_FRIEND_INFO', getcwd().DIRECTORY_SEPARATOR.'_data'.DIRECTORY_SEPARATOR.'friend-info.dat');
 /*
 define('EMAIL_TO', 'sagarkelkar1234@gmail.com');
 */

@@ -13,8 +13,6 @@ $facebook = new Facebook(array(
   'fileUpload' => true,
 ));
 
-//printFormattedArray($facebook); exit;
-
 function getAppInstallationDetails($access_token)
 {
 	/*

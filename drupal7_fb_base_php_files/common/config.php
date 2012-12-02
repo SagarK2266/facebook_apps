@@ -10,7 +10,7 @@ if(!headers_sent())
 
 error_reporting(-1); 
 date_default_timezone_set('Asia/Calcutta'); 
-if(session_id()) 
+if(session_id() == NULL) 
 {
 	session_start();
 }

@@ -4,6 +4,7 @@ include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-user.php');
 include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-friend.php');
 include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'_handle_facebook_data.php');
 include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'fb-permission.php');
+include_once(CUSTOM_PHP_FILES.'facebook_data_load'.DS.'bs-user.php');
 
 
 //Set access token to session
@@ -31,10 +32,9 @@ if(!isNonFacebookDeployment())
 }
 
 
-/* Update database.
-$dbAction = CheckAndUpdateUserDatabase($user_id, $UserAccessToken,$facebook);
+/* Update database. */
+$dbAction = CheckAndUpdateUserDatabase($user, $UserAccessToken,$facebook);
 SetSessionVal(SESSION_userDbAction, $dbAction);
-*/
 
 /*
  * Store the user info
@@ -61,7 +61,6 @@ $userDataArray[$selfId]= $userInfo;
  */
 if(!isNonFacebookDeployment())
 {
-	// check \\server\projects\ZDKFacebook\ZDKFacebookW\SysTest\images\svn116-loaddata-01.png
 	//TODO - Sagar - Priority 1
 	//Below function is taking time.. 
 	//So, we shall be putting some indication that we are loading friend list

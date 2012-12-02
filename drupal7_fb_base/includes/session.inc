@@ -272,7 +272,10 @@ function drupal_session_start() {
     // Save current session data before starting it, as PHP will destroy it.
     $session_data = isset($_SESSION) ? $_SESSION : NULL;
 
-    session_start();
+	if(session_id() == NULL) 
+	{
+		session_start();
+	}        
     drupal_session_started(TRUE);
 
     // Restore session data.

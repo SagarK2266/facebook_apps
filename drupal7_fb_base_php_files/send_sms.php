@@ -5,7 +5,7 @@ include_once('include_files.php');
 //include_once('facebook_data_load/_handle_facebook_data.php');
 //include_once('facebook_data_load/fb-permission.php');
 
-/*$userInfo = getUserInfoFromSession(); printFormattedArray($userInfo); exit;*/
+$userInfo = getUserInfoFromSession();
 
 ?>
 <html>
@@ -32,7 +32,7 @@ include_once('include_files.php');
             <legend><span class="fieldset-legend">Enjoy free SMS</span></legend>
             <div class="fieldset-wrapper">
                 <div class="form-item form-type-textfield form-item-fromname">
-                    <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="First Name" />
+                    <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $userInfo['first_name'] ?>" />
                     <div class="notice">
                         Please enter your first name.</div>
                 </div>

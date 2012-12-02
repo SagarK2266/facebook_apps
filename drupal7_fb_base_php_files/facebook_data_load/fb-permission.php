@@ -80,4 +80,13 @@ function CheckCurrentUserIsTestUser($uid,$testUsers)
 		}
 	}	
 } */
+
+function checkAppUserPermissions($user_perm, $access_token)
+{
+	//This Function can be used for to check the available permission.
+	$userPermissionsUrl = "https://api.facebook.com/method/users.hasAppPermission?ext_perm=$user_perm&access_token=$access_token&format=json";	
+	$userPublishPerm = GetFileContent($userPermissionsUrl);	
+	return $userPublishPerm;
+}
+
 ?>

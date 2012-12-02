@@ -5,7 +5,7 @@ include_once('include_files.php');
 //include_once('facebook_data_load/_handle_facebook_data.php');
 //include_once('facebook_data_load/fb-permission.php');
 
-//$userInfo = getUserInfoFromSession(); printFormattedArray($userInfo); exit;
+/*$userInfo = getUserInfoFromSession(); printFormattedArray($userInfo); exit;*/
 
 ?>
 <html>

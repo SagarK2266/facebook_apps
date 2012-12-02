@@ -52,8 +52,8 @@ function GetFileContent($url)
 {
 	//2BeChanged-For local deployment, uncomment below line file_get_contents
 	//and comment GetXMLFileContent line as curl does not work locally
-  	//$file_contents = file_get_contents($url);
-  	$file_contents = GetXMLFileContent($url);
+  	$file_contents = file_get_contents($url);
+  	//$file_contents = GetXMLFileContent($url);
 	return $file_contents;
 }
 

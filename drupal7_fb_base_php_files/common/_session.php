@@ -32,7 +32,7 @@ function SetSessionVal($session_name, $value, $serialize=false)
 function getUserInfoFromSession()
 {
 	$userInfo = GetSessionVal(SESSION_USER_INFO, $deserialize = true);
-	if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
+/*	if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
 	{
 		if($userInfo == "")
 		{
@@ -42,13 +42,13 @@ function getUserInfoFromSession()
 			exit;
 		}
 	}
-	return $userInfo;
+*/	return $userInfo;
 }
 
 function getFriendsDataFromSession()
 {
-	$friendsData = GetSessionVal(SESSION_FRIENDS_DATA_CURRENT, $deserialize = true);
-if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
+	$friendsData = GetSessionVal(SESSION_FRIENDS_DATA_ALL, $deserialize = true);
+/*	if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
 	{
 		if($friendsData == "")
 		{
@@ -58,7 +58,7 @@ if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQ
 			exit;
 		}
 	}
-	return $friendsData;
+*/	return $friendsData;
 }
 
 function traceAppLoad($str, $append = true)

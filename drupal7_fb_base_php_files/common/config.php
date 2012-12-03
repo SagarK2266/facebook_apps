@@ -50,15 +50,24 @@ define('way2smsConfigArray',  serialize(array(
 //}
 
 /*CONSTANT TO HAVE BETTER PATH IN THE CODE*/
-define('DS', DIRECTORY_SEPARATOR);
+if(!defined('DS'))
+{
+	define('DS', DIRECTORY_SEPARATOR);
+}
 if(!defined('FB_SMS_FOLDER'))
 {
 	define('FB_SMS_FOLDER', 'drupal7_fb_base');
 }
-define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files');
+if(!defined('FB_SMS_CORE_FILES_FOLDER'))
+{
+	define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files');
+}
 if(!defined('CUSTOM_PHP_FILES'))
 {
-	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].DS.FB_SMS_CORE_FILES_FOLDER.DS);
+	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].FB_SMS_CORE_FILES_FOLDER.DS);
 }
-define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER.'/');
+if(!defined('CUSTOM_PHP_FILES_HTTP_PATH'))
+{
+	define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER.'/');
+}
 ?>

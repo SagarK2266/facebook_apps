@@ -1,12 +1,34 @@
 <?php
 //TODO : Write a php script which will create this file and contents will be written so that site can be run in drupal mode when required.
 require 'drupal_mode_flag.php';
-require '../drupal7_fb_base_php_files/common/config.php';
+//require '../drupal7_fb_base_php_files/common/config.php';
+
+/*CONSTANT TO HAVE BETTER PATH IN THE CODE*/
+if(!defined('DS'))
+{
+	define('DS', DIRECTORY_SEPARATOR);
+}
+if(!defined('FB_SMS_FOLDER'))
+{
+	define('FB_SMS_FOLDER', 'drupal7_fb_base');
+}
+if(!defined('FB_SMS_CORE_FILES_FOLDER'))
+{
+	define('FB_SMS_CORE_FILES_FOLDER', FB_SMS_FOLDER.'_php_files');
+}
+if(!defined('CUSTOM_PHP_FILES'))
+{
+	define('CUSTOM_PHP_FILES', $_SERVER["DOCUMENT_ROOT"].FB_SMS_CORE_FILES_FOLDER.DS);
+}
+if(!defined('CUSTOM_PHP_FILES_HTTP_PATH'))
+{
+	define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER.'/');
+}
 
 if(DRUPAL_MODE == 'off')
 {
  	$url = '../drupal7_fb_base_php_files/facebook_data_load/index.php';
- 	include ($url);
+ 	include_once($url);
 }
 else
 {

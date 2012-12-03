@@ -1,8 +1,12 @@
 <?php
 include_once('include_files.php'); 
-/* $loadUrl = CUSTOM_PHP_FILES_HTTP_PATH.'send_sms.php';
-echo $loadUrl; exit;
+/*$userInfo = getUserInfoFromSession();
+$db = new Database(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+$db->connect();
+$userInfoDbRecord = getUserInfoDbRecord($db,$userInfo['id']);
  */
+
+$loadUrl = "/drupal7_fb_base_php_files/send_sms.php";
 ?>
 <p>
-	<iframe class="mid_div" id="mid_div" iframe="" name="mid_div" src="<?php echo "/drupal7_fb_base_php_files/send_sms.php" ?>"></iframe></p>
+	<iframe class="mid_div" id="mid_div" iframe="" name="mid_div" src="<?php echo $loadUrl ?>"></iframe></p>

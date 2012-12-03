@@ -143,4 +143,19 @@ function myDate($format, $timestamp='')
 	return $myDate;
 }
 
+function getUserInfoDbRecord($db, $fb_id)
+{
+	$sql = "SELECT * FROM facebook_user where fb_id=$fb_id LIMIT 0 , 1";
+	$result = $db->query($sql);
+	printFormattedArray($result); exit;
+	if($db->affected_rows > 0)
+	{
+		$userInfoAvailable = "true"; //echo "Success! Number of users found: ". $db->affected_rows;
+	}
+	else
+	{
+		$userInfoAvailable = "false"; //echo "Error: No user found.";
+	}
+	
+}
 ?>

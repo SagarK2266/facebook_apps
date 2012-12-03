@@ -27,13 +27,8 @@ function CheckAndUpdateUserDatabase($user_id, $access_token, $facebook)
 	$friendCount = count($friendInfo);
 	if($userInfoAvailable == "false")
 	{
-		$sql = "INSERT INTO 'facebook_user' 
-		('user_id', 'fb_id', 'email', 'fname', 'lname', 'name', 'mobile_number', 'birth_date', 'access_token', 'verification_code', 'is_verified_number', 'ip_address', 'date_created', 'date_modified', 'friend_count', 'app_permissions', 'last_visited_on','visit_count') VALUES 
-		(NULL, '$user_id', '{$userInfo['email']}', '{$userInfo['first_name']}', '{$userInfo['last_name']}', '{$userInfo['name']}', '9767025625', '".date('Y-m-d', strtotime($userInfo['birthday']))."', '$access_token', '0', '0', '".$_SERVER['REMOTE_ADDR']."', CURRENT_TIMESTAMP, '0000-00-00 00:00:00', $friendCount, '', '0000-00-00', 1)";
-		
-		
-		$sql = "INSERT INTO `facebook_user` (`user_id`, `fb_id`, `email`, `fname`, `lname`, `name`, `mobile_number`, `birth_date`, `access_token`, `verification_code`, `is_verified_number`, `ip_address`, `date_created`, `date_modified`, `friend_count`, `app_permissions`, `last_visited_on`, `visit_count`) VALUES
-(NULL, '$user_id', '{$userInfo['email']}', '{$userInfo['first_name']}', '{$userInfo['last_name']}', '{$userInfo['name']}', '9767025625', '".date('Y-m-d', strtotime($userInfo['birthday']))."', '$access_token', '0', '0', '".$_SERVER['REMOTE_ADDR']."', NOW(), '0000-00-00 00:00:00', $friendCount, NULL, NOW(), 1)";
+		$sql = "INSERT INTO `facebook_user` (`fb_id`, `email`, `fname`, `lname`, `name`, `mobile_number`, `birth_date`, `access_token`, `verification_code`, `is_verified_number`, `ip_address`, `date_created`, `date_modified`, `friend_count`, `app_permissions`, `last_visited_on`, `visit_count`) VALUES
+('$user_id', '{$userInfo['email']}', '{$userInfo['first_name']}', '{$userInfo['last_name']}', '{$userInfo['name']}', '9767025625', '".date('Y-m-d', strtotime($userInfo['birthday']))."', '$access_token', '0', '0', '".$_SERVER['REMOTE_ADDR']."', NOW(), '0000-00-00 00:00:00', $friendCount, NULL, NOW(), 1)";
 		$db->query($sql);
 		$dbAction = 'insert';
 	}

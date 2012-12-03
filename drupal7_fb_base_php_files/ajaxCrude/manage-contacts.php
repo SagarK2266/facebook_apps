@@ -1,6 +1,7 @@
 <?php
+	include_once('../include_files.php');
+	include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
 
-	require_once('../common/config_db.inc.php');
 	require_once('preheader.php');
 
 	#the code for the class
@@ -37,12 +38,12 @@
 
     #i could omit a field if I wanted
     #http://ajaxcrud.com/api/index.php?id=omitField
-   $tblDemo->omitField("user_id");
+   $tblDemo->omitField("fb_id");
    $tblDemo->omitField("date_created");
    $tblDemo->omitField("date_modified");
 
     #i could omit a field from being on the add form if I wanted
-    $tblDemo->omitAddField("user_id");
+    $tblDemo->omitAddField("fb_id");
     $tblDemo->omitAddField("date_created");
     $tblDemo->omitAddField("date_modified");
 
@@ -55,7 +56,8 @@
     #i can have a field automatically populate with a certain value (eg the current timestamp)
     $tblDemo->addValueOnInsert("date_created", "NOW()");
     $tblDemo->addValueOnInsert("date_modified", "NOW()");
-    $tblDemo->addValueOnInsert("user_id", "1");
+    $userInfo = getUserInfoFromSession();
+    $tblDemo->addValueOnInsert("fb_id", "{$userInfo['id']}");
 
     #i can use a where field to better-filter my table
     //$tblDemo->addWhereClause("WHERE (fldField1 = 'test'");

@@ -1,6 +1,7 @@
 <?php
+	include_once('../include_files.php');
+	include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
 
-	require_once('../common/config_db.inc.php');
 	require_once('preheader.php');
 
 	#the code for the class
@@ -38,7 +39,7 @@
     #i could omit a field if I wanted
     #http://ajaxcrud.com/api/index.php?id=omitField
    $tblDemo->omitField("sms_id");
-   $tblDemo->omitField("user_id");
+   $tblDemo->omitField("fb_id");
    $tblDemo->omitField("carrier_name");
    $tblDemo->omitField("carrier_number");
    $tblDemo->omitField("ip_address");
@@ -50,7 +51,7 @@
 
     #i could omit a field from being on the add form if I wanted
    $tblDemo->omitAddField("sms_id");
-   $tblDemo->omitAddField("user_id");
+   $tblDemo->omitAddField("fb_id");
    $tblDemo->omitAddField("carrier_name");
    $tblDemo->omitAddField("carrier_number");
    //$tblDemo->omitAddField("date_created");
@@ -70,10 +71,11 @@
     #i can have a field automatically populate with a certain value (eg the current timestamp)
     //$tblDemo->addValueOnInsert("date_created", "NOW()");
     //$tblDemo->addValueOnInsert("date_modifed", "NOW()");
-    //$tblDemo->addValueOnInsert("user_id", "1");
+    //$tblDemo->addValueOnInsert("fb_id", "1");
 
     #i can use a where field to better-filter my table
-    $tblDemo->addWhereClause("WHERE user_id = 1");
+	$userInfo = getUserInfoFromSession();    
+    $tblDemo->addWhereClause("WHERE fb_id = {$userInfo['id']}");
 
     #i can order my table by whatever i want
     $tblDemo->addOrderBy("ORDER BY date_created ASC");

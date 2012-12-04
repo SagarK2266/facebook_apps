@@ -1,6 +1,5 @@
 <?php
 	include_once('../include_files.php');
-	include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
 
 	require_once('preheader.php');
 
@@ -78,7 +77,7 @@
     $tblDemo->addWhereClause("WHERE fb_id = {$userInfo['id']}");
 
     #i can order my table by whatever i want
-    $tblDemo->addOrderBy("ORDER BY date_created ASC");
+    $tblDemo->addOrderBy("ORDER BY date_created desc");
 
     #i can set certain fields to only allow certain values
     #http://ajaxcrud.com/api/index.php?id=defineAllowableValues

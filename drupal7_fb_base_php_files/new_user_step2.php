@@ -2,6 +2,9 @@
 /*
  * Get the users mobile number and send the verification code.
  */
+include_once('./common/config.php');
+include_once('./common/commonfunctions.php');
+$error = getParameterValue('error');
 ?>
 <html>
 <head>
@@ -10,6 +13,11 @@
 <script type="text/javascript"></script>
 </head>
 <body>
+<?php
+if ($error == true):
+echo "<div class='notice'>Error occured while sending verification code. Please try again.</div>";
+endif;
+?>
 <form accept-charset="UTF-8" action="new_user_step2_control.php" id="new_user_step1.php" method="post">
     <div>
         <fieldset class="form-wrapper" id="edit-sms">

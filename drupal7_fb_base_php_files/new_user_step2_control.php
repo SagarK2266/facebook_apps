@@ -10,22 +10,34 @@
  */
 
 include_once('include_files.php');
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'mysql_class'.DS.'Database.class.php');
 
 $verification_code = trim(getParameterValue('verification-code'));
 $userInfo = getUserInfoFromSession();
 
-$db = new Database(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+$db = new MyDatabase(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
 $db->connect();
-$sql = "SELECT * FROM facebook_user where fb_id={$userInfo['id']} LIMIT 0 , 1";
-$userDbRecord = $db->query($sql);
 
-if($verification_code == $userDbRecord['verification_code'])
+$userInfoDbRecord = getUserInfoDbRecord($db, $userInfo['id']);
+
+if($verification_code == $userInfoDbRecord['verification_code'])
 {
-	echo "User is verified.";
+	updateUserStatus();
+	echo "You are now verified use. click here to start sending sms.";
+	echo '<a href="send_sms.php">Send SMS</a>';
 }
 else
 {
-	echo "User is not verified.";
+	//send user back to try again;	
+	header('location: new_user_step2.php?error=true');	
+}
+
+function updateUserStatus()
+{
+	$userInfo = getUserInfoFromSession();
+	$db = new MyDatabase(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+	$db->connect();
+	$sql = "UPDATE ".USER_TABLE."
+ 			 SET is_verified_number = '1'
+ 			 WHERE fb_id = '" . $userInfo['id'] . "'";
+	$db->query($sql);
 }

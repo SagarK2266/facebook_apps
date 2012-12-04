@@ -1,6 +1,5 @@
 <?php
 	include_once('../include_files.php');
-	include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
 
 	require_once('preheader.php');
 
@@ -11,7 +10,7 @@
     ########################################################
     ##
 
-    $tblDemo = new ajaxCRUD("Item", TABLE_PREFIX."contacts", "contact_id", "");
+    $tblDemo = new ajaxCRUD("Contact", TABLE_PREFIX."contacts", "contact_id", "");
 
     ##
     ########################################################

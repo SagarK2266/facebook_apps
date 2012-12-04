@@ -5,7 +5,7 @@ include_once('_session.php');
 */
 function sendMessage($fromname, $receivernumber, $message)
 { 
-   require_once 'Way2SMS-API/way2sms-api.php';
+	include_once(CUSTOM_PHP_FILES .'Way2SMS-API'.DS.'way2sms-api.php');
    $way2smsConfigArray = unserialize(way2smsConfigArray);
    $username = array_rand($way2smsConfigArray);
    $password = $way2smsConfigArray[$username];
@@ -147,15 +147,7 @@ function getUserInfoDbRecord($db, $fb_id)
 {
 	$sql = "SELECT * FROM facebook_user where fb_id=$fb_id LIMIT 0 , 1";
 	$result = $db->query($sql);
-	printFormattedArray($result); exit;
-	if($db->affected_rows > 0)
-	{
-		$userInfoAvailable = "true"; //echo "Success! Number of users found: ". $db->affected_rows;
-	}
-	else
-	{
-		$userInfoAvailable = "false"; //echo "Error: No user found.";
-	}
-	
+	$userInfoDbRecord = mysql_fetch_array($result);
+	return $userInfoDbRecord;
 }
 ?>

@@ -2,14 +2,12 @@
 			/***********Lib File***********/
 /* Note: Do not modify this file for the application specific requirements */
 
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'mysql_class'.DS.'Database.class.php');
-
+include_once(CUSTOM_PHP_FILES . 'include_files.php');
 
 function CheckAndUpdateUserDatabase($user_id, $access_token, $facebook)
 {
 	//1) If user record not exists in database then insert that record
-	$db = new Database(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+	$db = new MyDatabase(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
 	$db->connect();
 
 	$sql = "SELECT * FROM facebook_user where fb_id=$user_id LIMIT 0 , 1";

@@ -5,8 +5,6 @@
  */
 
 include_once('include_files.php');
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
-include_once(CUSTOM_PHP_FILES . 'common'.DS.'mysql_class'.DS.'Database.class.php');
 
 //Get the parameters
 $fromname = AppConfig::APP_MESSAGE_FROM;
@@ -20,7 +18,7 @@ $status = sendMessage($fromname, $receivernumber, $message);
 if($status == true)
 {
    //update database;
-	updateVerificationCode($verification_code, $receivernumber);
+   updateVerificationCode($verification_code, $receivernumber);
    header('location: new_user_step2.php');
 }
 else
@@ -32,7 +30,7 @@ else
 function updateVerificationCode($verification_code, $receivernumber)
 {
 	$userInfo = getUserInfoFromSession(); //$userInfo['id']
-	$db = new Database(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
+	$db = new MyDatabase(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
 	$db->connect();
 	$sql = "UPDATE ".USER_TABLE."
  			 SET verification_code = '$verification_code',

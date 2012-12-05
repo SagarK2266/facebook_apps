@@ -31,11 +31,6 @@ if(!isNonFacebookDeployment())
 	setSessionVal(SESSION_USER_ACCESS_TOKEN, $UserAccessToken, $serialize = true);
 }
 
-
-/* Update database. */
-$dbAction = CheckAndUpdateUserDatabase($user, $UserAccessToken,$facebook);
-SetSessionVal(SESSION_userDbAction, $dbAction);
-
 /*
  * Store the user info
  */
@@ -95,6 +90,11 @@ else
 
 setSessionVal(SESSION_FRIENDS_DATA_ALL, $friendsData, $serialize = true);
 traceAppLoad("Friends Data Stored in Session");
+
+/* Update database. */
+$dbAction = CheckAndUpdateUserDatabase($user, $UserAccessToken,$facebook);
+SetSessionVal(SESSION_userDbAction, $dbAction);
+
 
 /*
  * Auto publish on app load.

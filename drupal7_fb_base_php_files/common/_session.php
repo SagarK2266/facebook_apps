@@ -32,33 +32,50 @@ function SetSessionVal($session_name, $value, $serialize=false)
 function getUserInfoFromSession()
 {
 	$userInfo = GetSessionVal(SESSION_USER_INFO, $deserialize = true);
-/*	if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
+	if(!allowBlankSession())
 	{
 		if($userInfo == "")
 		{
 			?>
-			<script> location.href='<?php echo FacebookConfiguration::THE_FACEBOOK_URL.'/error-display.php' ?>'</script>
+			<script> location.href='<?php echo CUSTOM_PHP_FILES_HTTP_PATH.'error-display.php' ?>'</script>
 			<?php
 			exit;
 		}
 	}
-*/	return $userInfo;
+	return $userInfo;
 }
 
 function getFriendsDataFromSession()
 {
 	$friendsData = GetSessionVal(SESSION_FRIENDS_DATA_ALL, $deserialize = true);
-/*	if(!strpos($_SERVER['REQUEST_URI'], 'fb_sms_index.php') && !strpos($_SERVER['REQUEST_URI'], 'friends-load-data.php') && !strpos($_SERVER['REQUEST_URI'], 'index.php') && !strpos($_SERVER['REQUEST_URI'], 'fb-auto-publish.php'))
+	if(!allowBlankSession())
 	{
 		if($friendsData == "")
 		{
 			?>
-			<script> location.href='<?php echo FacebookConfiguration::THE_FACEBOOK_URL.'/error-display.php' ?>'</script>
+			<script> location.href='<?php echo CUSTOM_PHP_FILES_HTTP_PATH.'error-display.php' ?>'</script>
 			<?php
 			exit;
 		}
 	}
-*/	return $friendsData;
+	return $friendsData;
+}
+
+function allowBlankSession()
+{
+	/*Allow to have blank user info or friends info on this pages. and not display error page even if that is null.
+	 * */
+	$allow = false;
+	$allowBlankUserAndFriendInfoPages = array('fb_sms_index.php',  'friends-load-data.php' , 'index.php', 'fb-auto-publish.php');
+	foreach ($allowBlankUserAndFriendInfoPages as $page)
+	{
+		if(strpos($_SERVER['REQUEST_URI'], $page))
+		{
+			$allow = true;
+			break;
+		}
+	}
+	return $allow;
 }
 
 function traceAppLoad($str, $append = true)

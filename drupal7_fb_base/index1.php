@@ -1,8 +1,9 @@
 <?php
 
 
-/* TODO: check if this file is required.
+/*
  * Sagar copied this code from the original index.php file.
+ * This file is used somewhere. Be careful.
 */
 
 

@@ -1,5 +1,6 @@
 <?php
 	include_once('../include_files.php');
+	$userInfo = getUserInfoFromSession();
 
 	require_once('preheader.php');
 
@@ -73,7 +74,6 @@
     //$tblDemo->addValueOnInsert("fb_id", "1");
 
     #i can use a where field to better-filter my table
-	$userInfo = getUserInfoFromSession();    
     $tblDemo->addWhereClause("WHERE fb_id = {$userInfo['id']}");
 
     #i can order my table by whatever i want

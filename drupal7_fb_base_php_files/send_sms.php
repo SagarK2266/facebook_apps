@@ -44,7 +44,7 @@ $userInfo = getUserInfoFromSession();
                 <div class="form-item form-type-textarea form-item-message">
                     <label for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
                     <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
-                        <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" size="140">Enter your message</textarea>
+                        <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" size="140" onfocus="javascript:if( 'Enter your message' == this.value ) this.value = ''; ">Enter your message</textarea>
                     </div>
                     <div class="notice" id="message-counter">
                     Message length 140 chars

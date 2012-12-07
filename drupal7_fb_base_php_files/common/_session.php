@@ -66,6 +66,11 @@ function allowBlankSession()
 	/*Allow to have blank user info or friends info on this pages. and not display error page even if that is null.
 	 * */
 	$allow = false;
+/*	if($_SERVER['REQUEST_URI'] == '/drupal7_fb_base/')	//Allow to execute certain drupal url 
+	{
+		return true;
+	}
+	*/
 	$allowBlankUserAndFriendInfoPages = array('fb_sms_index.php',  'friends-load-data.php' , 'index.php', 'fb-auto-publish.php');
 	foreach ($allowBlankUserAndFriendInfoPages as $page)
 	{

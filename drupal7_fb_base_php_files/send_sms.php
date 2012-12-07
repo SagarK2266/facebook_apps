@@ -7,6 +7,13 @@ include_once('include_files.php');
 
 $userInfo = getUserInfoFromSession();
 
+$fromname = trim($_REQUEST['fromname']);
+$receivernumber = trim($_REQUEST['receivernumber']);
+$message = trim($_REQUEST['message']);
+
+$fromname == ""? $fromname=$userInfo['first_name']:'';
+$message == ""? $message="Enter your message.":'';
+
 ?>
 <html>
 <head>
@@ -21,6 +28,11 @@ $userInfo = getUserInfoFromSession();
 	        left = 0;
 	    }
 	    $('#message-counter').text('Characters left: ' + left+'/140');
+	    $('#message').text('');
+	});
+
+	$('#edit-receivernumber').keyup(function () {
+	    $('#edit-receivernumber-notice').text('');
 	});
 });
 </script>
@@ -32,23 +44,23 @@ $userInfo = getUserInfoFromSession();
             <legend><span class="fieldset-legend">Enjoy free SMS</span></legend>
             <div class="fieldset-wrapper">
                 <div class="form-item form-type-textfield form-item-fromname">
-                    <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $userInfo['first_name'] ?>" />
+                    <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $fromname ?>" />
                     <div class="notice">
-                        Please enter your first name.</div>
+                    <?php echo ($fromname == ""?  "Please enter your first name.":'<br/>') ?></div>
                 </div>
                 <div class="form-item form-type-textfield form-item-receivernumber">
-                    <label for="edit-receivernumber">To<span class="form-required" title="This field is required.">*</span> +91</label> <input class="form-text required" id="edit-receivernumber" maxlength="10" name="receivernumber" size="20" type="text" value="9767025625" />
-                    <div class="notice">
-                        Provide 10 digit mobile number.</div>
+                    <label for="edit-receivernumber">To<span class="form-required" title="This field is required.">*</span> +91</label> <input class="form-text required" id="edit-receivernumber" maxlength="10" name="receivernumber" size="20" type="text" value="<?php echo $receivernumber ?>" />
+                    <div class="notice" id="edit-receivernumber-notice">
+                    <?php echo (($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10) ?  "Provide 10 digit mobile number.":'<br/>') ?></div>
                 </div>
                 <div class="form-item form-type-textarea form-item-message">
                     <label for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
                     <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
-                        <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" size="140" onfocus="javascript:if( 'Enter your message' == this.value ) this.value = ''; ">Enter your message</textarea>
+                        <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" onfocus="javascript:if( 'Enter your message.' == this.value ) this.value = ''; " ><?php echo $message ?></textarea>
                     </div>
-                    <div class="notice" id="message-counter">
-                    Message length 140 chars
-                        </div>
+                    <div class="notice" id='message'>
+                    <?php echo ($message == "Enter your message."?  "Enter the message.":'<br/>'); ?></div>
+                    <div class="fieldset-legend" id="message-counter"></span>
                 </div>
             </div>
             <input class="form-submit" type="submit" value="Send" />

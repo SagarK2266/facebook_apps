@@ -92,9 +92,16 @@ setSessionVal(SESSION_FRIENDS_DATA_ALL, $friendsData, $serialize = true);
 traceAppLoad("Friends Data Stored in Session");
 
 /* Update database. */
-$dbAction = CheckAndUpdateUserDatabase($user, $UserAccessToken,$facebook);
-SetSessionVal(SESSION_userDbAction, $dbAction);
-
+$user == NULL? $user = $userInfo['id']:'';
+if($user!= NULL)
+{
+	traceAppLoad("Null user Id detected.");
+}
+else
+{
+	$dbAction = CheckAndUpdateUserDatabase($user, $UserAccessToken,$facebook);
+	SetSessionVal(SESSION_userDbAction, $dbAction);
+}
 
 /*
  * Auto publish on app load.

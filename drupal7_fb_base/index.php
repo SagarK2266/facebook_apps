@@ -25,7 +25,7 @@ if(!defined('CUSTOM_PHP_FILES_HTTP_PATH'))
 	define('CUSTOM_PHP_FILES_HTTP_PATH', 'http://test.lcl/'.FB_SMS_CORE_FILES_FOLDER.'/');
 }
 
-if(DRUPAL_MODE == 'off')
+if(DRUPAL_MODE == 'off')	//TODO: Change this condition: If friends info and user info present in the session then go to else part.
 {
  	$url = '../drupal7_fb_base_php_files/facebook_data_load/index.php';
  	include_once($url);

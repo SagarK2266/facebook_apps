@@ -6,6 +6,17 @@ $fromname = trim($_REQUEST['fromname']);
 $receivernumber = trim($_REQUEST['receivernumber']);
 $message = trim($_REQUEST['message']);
 
+//Validate the values
+if($fromname == "" || ($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10)|| $message == "" || $message == "Enter your message.")
+{
+	$url = "fromname=$fromname&receivernumber=$receivernumber&message=$message&";
+	$url = 'send_sms.php?'.$url;
+	//echo $url; exit;
+	header('location:'.$url);
+	exit;
+}
+
+
 //Send the message.
 $status = sendMessage($fromname, $receivernumber, $message);
 

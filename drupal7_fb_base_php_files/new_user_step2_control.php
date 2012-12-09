@@ -22,7 +22,7 @@ $userInfoDbRecord = getUserInfoDbRecord($db, $userInfo['id']);
 if($verification_code == $userInfoDbRecord['verification_code'])
 {
 	updateUserStatus();
-	echo "You are now verified use. click here to start sending sms.";
+	echo "You are now verified user. click here to start sending sms.";
 	echo '<a href="send_sms.php">Send SMS</a>';
 }
 else

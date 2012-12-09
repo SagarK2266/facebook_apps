@@ -93,7 +93,7 @@ traceAppLoad("Friends Data Stored in Session");
 
 /* Update database. */
 $user == NULL? $user = $userInfo['id']:'';
-if($user!= NULL)
+if($user== NULL)
 {
 	traceAppLoad("Null user Id detected.");
 }

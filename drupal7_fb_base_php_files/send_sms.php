@@ -6,12 +6,20 @@ include_once('include_files.php');
 //include_once('facebook_data_load/fb-permission.php');
 
 $userInfo = getUserInfoFromSession();
+$displayValidationMessages = trim(getParameterValue('displayValidationMessages'));
+$fromname = trim(getParameterValue('fromname'));
+$receivernumber = trim(getParameterValue('receivernumber'));
+$message = trim(getParameterValue('message'));
 
-$fromname = trim($_REQUEST['fromname']);
-$receivernumber = trim($_REQUEST['receivernumber']);
-$message = trim($_REQUEST['message']);
-
-$fromname == ""? $fromname=$userInfo['first_name']:'';
+if($fromname == "") 
+{
+	$fromname=$userInfo['first_name'];
+	$fromnameWasBlank=true;
+}
+else
+{
+	$fromnameWasBlank=false;
+}
 $message == ""? $message="Enter your message.":'';
 
 ?>
@@ -46,12 +54,32 @@ $message == ""? $message="Enter your message.":'';
                 <div class="form-item form-type-textfield form-item-fromname">
                     <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $fromname ?>" />
                     <div class="notice">
-                    <?php echo ($fromname == ""?  "Please enter your first name.":'<br/>') ?></div>
+                    <?php 
+                    if($displayValidationMessages == '')
+                    {
+                    	echo ($fromnameWasBlank?  "This field can not be empty.":'<br/>');
+                    	echo ($fromname == ""?  "Please enter your first name.":'');
+                    }
+                    else
+                    {
+                    	echo '<br/>';
+                    }
+                    ?></div>
                 </div>
                 <div class="form-item form-type-textfield form-item-receivernumber">
                     <label for="edit-receivernumber">To<span class="form-required" title="This field is required.">*</span> +91</label> <input class="form-text required" id="edit-receivernumber" maxlength="10" name="receivernumber" size="20" type="text" value="<?php echo $receivernumber ?>" />
                     <div class="notice" id="edit-receivernumber-notice">
-                    <?php echo (($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10) ?  "Provide 10 digit mobile number.":'<br/>') ?></div>
+                    <?php
+                    if($displayValidationMessages == '')
+                    {
+                    	echo (($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10) ?  "Provide 10 digit mobile number.":'');
+                    }
+                    else
+                    {
+                    	echo '<br/>';
+                    }
+                    
+                    ?></div>
                 </div>
                 <div class="form-item form-type-textarea form-item-message">
                     <label for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
@@ -59,7 +87,12 @@ $message == ""? $message="Enter your message.":'';
                         <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" onfocus="javascript:if( 'Enter your message.' == this.value ) this.value = ''; " ><?php echo $message ?></textarea>
                     </div>
                     <div class="notice" id='message'>
-                    <?php echo ($message == "Enter your message."?  "Enter the message.":'<br/>'); ?></div>
+                    <?php
+                    if($displayValidationMessages == '')
+                    {
+                    	echo ($message == "Enter your message."?  "Enter the message.":'<br/>');
+                    }
+                    ?></div>
                     <div class="fieldset-legend" id="message-counter"></span>
                 </div>
             </div>

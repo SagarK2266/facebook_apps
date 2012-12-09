@@ -9,7 +9,7 @@ $userInfoDbRecord = getUserInfoDbRecord($db, $userInfo['id']='100001302804650');
 //If user has a verified mobile number then redirect to the send sms page else ask him to verify the mobile number.
 if($userInfoDbRecord['is_verified_number'] == true)
 {
-	$loadUrl = "/drupal7_fb_base_php_files/send_sms.php";
+	$loadUrl = "/drupal7_fb_base_php_files/send_sms.php?displayValidationMessages=false";
 }
 else
 {

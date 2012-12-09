@@ -22,7 +22,7 @@
 		</tr>
 		<tr>
 			<td scope="col">
-			<a class="active" href="../drupal7_fb_base_php_files/send_sms.php" target="mid_div" title="Send Message form">Send Message</a></td>
+			<a class="active" href="../drupal7_fb_base_php_files/send_sms.php?displayValidationMessages=false" target="mid_div" title="Send Message form">Send Message</a></td>
 			<td scope="row">
 				<span style="background-color:#ee82ee;">Like Us</span></td>
 			<td scope="col">

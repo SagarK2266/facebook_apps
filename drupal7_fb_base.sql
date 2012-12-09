@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 04, 2012 at 11:51 PM
+-- Generation Time: Dec 09, 2012 at 10:06 AM
 -- Server version: 5.5.15
 -- PHP Version: 5.3.2
 
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `facebook_user` (
   `fname` varchar(45) NOT NULL,
   `lname` varchar(45) NOT NULL,
   `name` varchar(90) NOT NULL,
-  `mobile_number` varchar(15) DEFAULT NULL,
+  `mobile_number` bigint(15) DEFAULT NULL,
   `birth_date` date DEFAULT NULL,
   `access_token` varchar(150) DEFAULT NULL,
   `verification_code` varchar(10) NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `facebook_user` (
 --
 
 INSERT INTO `facebook_user` (`fb_id`, `email`, `fname`, `lname`, `name`, `mobile_number`, `birth_date`, `access_token`, `verification_code`, `is_verified_number`, `ip_address`, `date_created`, `date_modified`, `friend_count`, `app_permissions`, `last_visited_on`, `visit_count`) VALUES
-('100004602402475', '', 'Sagar', 'Kelkar', 'Sagar Kelkar', '9767025625', '1992-11-10', 'AAAE1cZCWudpYBAFB5Egxrhrt1MQB3T9yKJ841ZAG3vjmI9ZAnrMjRgHp54hKoEDdVUw4r5NYNpW3apJcGsNMIbdzVTADcL1AKZBkaWa7TgZDZD', '1623', '1', '127.0.0.1', '2012-12-04 23:40:40', '2012-12-04 18:16:53', 0, 'publish_stream_perm,public_actions_perm, -', '2012-12-04', 1);
+('100004602402475', '', 'Sagar', 'Kelkar', 'Sagar Kelkar', 9767025625, '1992-11-10', 'AAAE1cZCWudpYBAFB5Egxrhrt1MQB3T9yKJ841ZAG3vjmI9ZAnrMjRgHp54hKoEDdVUw4r5NYNpW3apJcGsNMIbdzVTADcL1AKZBkaWa7TgZDZD', '1623', '1', '127.0.0.1', '2012-12-04 23:40:40', '2012-12-05 16:24:51', 0, 'publish_stream_perm,public_actions_perm, -', '2012-12-05', 1);
 
 -- --------------------------------------------------------
 
@@ -64,19 +64,20 @@ CREATE TABLE IF NOT EXISTS `facebook_user_contacts` (
   `contact_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fb_id` varchar(50) NOT NULL,
   `contact_name` varchar(45) NOT NULL,
-  `contact_number` varchar(15) NOT NULL,
+  `contact_number` bigint(15) NOT NULL,
   `date_created` datetime NOT NULL,
   `date_modified` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`contact_id`),
   KEY `FK_facebook_user_contacts_1` (`fb_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `facebook_user_contacts`
 --
 
 INSERT INTO `facebook_user_contacts` (`contact_id`, `fb_id`, `contact_name`, `contact_number`, `date_created`, `date_modified`) VALUES
-(4, '100004602402475', 'Ganesh', '8007197990', '2012-12-04 23:49:27', '2012-12-04 18:19:27');
+(4, '100004602402475', 'Ganesh', 8007197990, '2012-12-04 23:49:27', '2012-12-04 18:19:27'),
+(5, '100004602402475', 'Sagar', 9767025625, '2012-12-05 00:18:20', '2012-12-04 18:48:20');
 
 -- --------------------------------------------------------
 
@@ -87,7 +88,7 @@ INSERT INTO `facebook_user_contacts` (`contact_id`, `fb_id`, `contact_name`, `co
 CREATE TABLE IF NOT EXISTS `facebook_user_sms` (
   `sms_id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `fb_id` varchar(50) NOT NULL,
-  `receiver_number` varchar(15) NOT NULL,
+  `receiver_number` bigint(15) NOT NULL,
   `message` varchar(240) NOT NULL,
   `carrier_name` varchar(45) NOT NULL,
   `carrier_number` varchar(15) NOT NULL,
@@ -104,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `facebook_user_sms` (
 --
 
 INSERT INTO `facebook_user_sms` (`sms_id`, `fb_id`, `receiver_number`, `message`, `carrier_name`, `carrier_number`, `is_delivered`, `ip_address`, `date_created`, `date_modifed`) VALUES
-(9, '100004602402475', '9767025625', 'This is a record', 'idea', '9767025625', '1', '127.0.0.1', '2012-12-04 23:48:07', '0000-00-00 00:00:00');
+(9, '100004602402475', 9767025625, 'This is a record', 'idea', '9767025625', '1', '127.0.0.1', '2012-12-04 23:48:07', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 

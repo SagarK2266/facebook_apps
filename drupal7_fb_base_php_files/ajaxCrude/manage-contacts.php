@@ -4,7 +4,7 @@
 	require_once('preheader.php');
 
 	#the code for the class
-	include ('ajaxCRUD.class.php');
+	include ('ajaxCRUD-contacts.class.php');
 
     #this one line of code is how you implement the class
     ########################################################

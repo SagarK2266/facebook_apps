@@ -1,5 +1,6 @@
 <?php
 include_once('include_files.php');
+printFormattedArray($_SERVER); exit;
 echo "<center><br><br>Ooops... We have encountered a technical issue...<br>";
 echo "Kindly <b><a href='#' onclick=\"top.location.href='".FacebookConfiguration::CANVAS_PAGE_URL ."'\">click here</a></b> to reload the application<br><br>";
 echo "If you stll face problem,<br>";

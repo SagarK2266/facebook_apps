@@ -27,7 +27,7 @@ class FacebookConfiguration
 //Add only app related constants.
 class AppConfig
 {
-	const NON_FACEBOOK_DEPLOYMENT = false;	//true: means off-line deployment
+	const NON_FACEBOOK_DEPLOYMENT = true;	//true: means off-line deployment
 	const STORE_SERIALIZED_DATA = true;	//true: Store facebook data in the serialized files
 	const LIVE_DEPLOYMENT = false;
 	const APP_MESSAGE_FROM = "fbsms";

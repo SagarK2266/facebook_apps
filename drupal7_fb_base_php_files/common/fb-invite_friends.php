@@ -32,7 +32,15 @@ function getCommaSeperatedFriendsId()
 	$allFriendsIdArray = array();
 	$friendsData = getFriendsDataFromSession();
 	$noOfFriends = SHOW_TOTAL_FRIENDS_IN_INVITE_FRIENDS_DIALOG;
-	$filteredFriendIdArray = array_rand($friendsData, $noOfFriends+1);
-	$allFriendsId = implode(",", $filteredFriendIdArray);
-	return $allFriendsId;
+	if(is_array($friendsData))
+	{
+		$filteredFriendIdArray = array_rand($friendsData, $noOfFriends+1);
+		$allFriendsId = implode(",", $filteredFriendIdArray);
+		return $allFriendsId;
+	}
+	else
+	{
+		return;
+	}
+	
 }

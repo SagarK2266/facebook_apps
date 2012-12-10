@@ -72,13 +72,12 @@ $message == ""? $message="Enter your message.":'';
                     <?php
                     if($displayValidationMessages == '')
                     {
-                    	echo (($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10) ?  "Provide 10 digit mobile number.":'');
+                    	echo (($receivernumber == "" || !is_numeric($receivernumber) || strlen($receivernumber) !=10) ?  "Provide 10 digit mobile number.":'<br/>');
                     }
                     else
                     {
                     	echo '<br/>';
                     }
-                    
                     ?></div>
                 </div>
                 <div class="form-item form-type-textarea form-item-message">
@@ -91,6 +90,10 @@ $message == ""? $message="Enter your message.":'';
                     if($displayValidationMessages == '')
                     {
                     	echo ($message == "Enter your message."?  "Enter the message.":'<br/>');
+                    }
+                    else
+                    {
+                    	echo '<br/>';
                     }
                     ?></div>
                     <div class="fieldset-legend" id="message-counter"></span>

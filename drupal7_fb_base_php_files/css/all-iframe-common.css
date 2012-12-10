@@ -18,6 +18,8 @@ input
 .notice
 {
 	color: red;
+	font-size:13px;
+	font-style:italic;
 }
 
 .form-submit

@@ -15,11 +15,10 @@ else
 	define('APP_AUTH_SCOPE', 'user_birthday,friends_birthday,offline_access');
 }
 
-/*
 define('POST_ON_WALL_DESC', 'Ever wonder about the trivia of the friend information. Maniac ways to see the demographics fact of various factors and aspects of the data. The application presents the most fun way to know the trivia of friends demographics info across tons of facet never seen before. Check the numbers churned in various ways and experience the lighter side of numerology and astrology. Most elite way to see the group of friends having common characteristics.');
 define('POST_BIRTHDAY_ON_WALL_DESC', 'Wishing you all the best in the year to come. May your days be filled with sunshine and beautiful colors and may your nights be filled with comforting dreams and wishes to come.');
-define('POST_ON_WALL_CAPTION', 'www.paramss.com');
-define('CUSTOMER_CARE_EMAIL', 'psspl_emp@paramss.com');
+define('POST_ON_WALL_CAPTION', 'www.wonderskill.com');
+define('CUSTOMER_CARE_EMAIL', 'sagarkelkar1234@gmail.com');
 define('APP_REQUEST_MESSAGE','Experience fun-filled journey from Trivia to Mania - Param Software Services');
 define('APP_BIRTHDAY_MESSAGE','Wishing you the happiest of birthdays; Hope this is your best year yet.');
 define('APP_BELATED_BIRTHDAY_MESSAGE','No excuse is good enough for missing your birthday!  A very Happy Belated Birthday.');
@@ -28,7 +27,8 @@ define('APP_REQUEST_WALL_PICTURE', 'http://paramss.com/fb/images/ftdm/publish-fe
 define('IMAGE_PATH', 'http://paramss.com/fb/friends-trivia-demographics-mania/');
 define('APP_BIRTHDAY_WALL_PICTURE', 'http://paramss.com/fb/images/ftdm/postonwall/set000/birthday.jpg');
 define('TEMPORARY_STRING', '@#~#@');
-*/
+
+define('SHOW_TOTAL_FRIENDS_IN_INVITE_FRIENDS_DIALOG',49);
 define('FRIEND_LOAD_DATA_LOT', '50');
 define('FILENAME_USER_INFO', getcwd().DIRECTORY_SEPARATOR.'_data'.DIRECTORY_SEPARATOR.'user-info.dat');
 define('FILENAME_FRIEND_LIST', getcwd().DIRECTORY_SEPARATOR.'_data'.DIRECTORY_SEPARATOR.'friend-list.dat');

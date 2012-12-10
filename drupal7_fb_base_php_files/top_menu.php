@@ -24,9 +24,9 @@
 			<td scope="col">
 			<a class="active" href="../drupal7_fb_base_php_files/send_sms.php?displayValidationMessages=false" target="mid_div" title="Send Message form">Send Message</a></td>
 			<td scope="row">
-				<span style="background-color:#ee82ee;">Like Us</span></td>
+				<span style="background-color:#ee82ee;"><?php include_once(CUSTOM_PHP_FILES.'common/fb-like.php'); ?></span></td>
 			<td scope="col">
-				<span style="background-color:#ee82ee;">Invite friends</span></td>
+				<span style="background-color:#ee82ee;"><?php include_once(CUSTOM_PHP_FILES.'common/fb-invite_friends.php'); ?></span></td>
 			<td scope="col">
 				<a class="active" href="../drupal7_fb_base_php_files/ajaxCrude/manage-contacts.php" target="mid_div" title="Manage Contacts">Manage Contacts</a></td>		
 			<td scope="col">

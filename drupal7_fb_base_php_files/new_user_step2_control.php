@@ -21,7 +21,7 @@ $userInfoDbRecord = getUserInfoDbRecord($db, $userInfo['id']);
 
 if($verification_code == $userInfoDbRecord['verification_code'])
 {
-	updateUserStatus();
+	updateUserStatus($db, $userInfo);
 	echo "You are now verified user. click here to start sending sms.";
 	echo '<a href="send_sms.php">Send SMS</a>';
 }
@@ -31,11 +31,8 @@ else
 	header('location: new_user_step2.php?error=true');	
 }
 
-function updateUserStatus()
+function updateUserStatus($db, $userInfo)
 {
-	$userInfo = getUserInfoFromSession();
-	$db = new MyDatabase(DB_SERVER, DB_USER, DB_PASS, DB_DATABASE);
-	$db->connect();
 	$sql = "UPDATE ".USER_TABLE."
  			 SET is_verified_number = '1'
  			 WHERE fb_id = '" . $userInfo['id'] . "'";

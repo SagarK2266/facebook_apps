@@ -79,6 +79,7 @@ fieldset {
   border-style: solid;
   border-width: 1px;
   overflow: hidden;
+  height:50px !important;  
 }
 #header-watermark {
   margin: 0;

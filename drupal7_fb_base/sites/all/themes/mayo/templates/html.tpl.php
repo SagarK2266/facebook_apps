@@ -88,7 +88,9 @@
 
 <?
 //Code to increase the height of the facebook iframe
+/*
 ?>
+<!-- 
 	<script>
 	FB.init({
  	appId  : '<?php echo FacebookConfiguration::APP_ID; ?>',
@@ -98,8 +100,9 @@
  	});
 	FB.Canvas.setAutoGrow();
 	</script>
-
+ 
 <?
+*/
 //End of Code to increase the height of the facebook iframe
 ?>
   <div id="skip-link">

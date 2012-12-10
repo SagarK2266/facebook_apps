@@ -198,6 +198,12 @@ function confirmDelete(id, table, pk){
 		ajax_deleteRow(id, table, pk);
 	}
 }
+
+function sendSmsPage(contact_id ){
+location.href= 'redirect_to_send_sms.php?sendToContactId='+contact_id; 
+	
+}
+
 function deleteFile(field, id){
 	if(confirm('Are you sure you want to delete this file? This cannot be undone.')) {
 		location.href="?action=delete_file&field_name=" + field + "&id=" + id;

@@ -6,6 +6,7 @@ include_once('include_files.php');
 //include_once('facebook_data_load/fb-permission.php');
 
 $userInfo = getUserInfoFromSession();
+//printFormattedArray($userInfo); exit;
 $displayValidationMessages = trim(getParameterValue('displayValidationMessages'));
 $fromname = trim(getParameterValue('fromname'));
 $receivernumber = trim(getParameterValue('receivernumber'));

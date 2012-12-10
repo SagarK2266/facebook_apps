@@ -1181,8 +1181,6 @@ class ajaxCRUD{
                         }
 
                     }
-
-                    //Modified by sagar to add 'send sms button'
                     
                     $html .= "</td>";
                     $html .=  "<span id='text_" . $field . $id . "'><a target=\"_new\" href=\"$file_link\">" . $cell_data . "</a> (<a style=\"font-size: 9px;\" href=\"javascript:\" onClick=\"document.getElementById('file_$field$id').style.display = ''; document.getElementById('text_$field$id').style.display = 'none'; \">edit</a> <a style=\"font-size: 9px;\" href=\"javascript:\" onClick=\"deleteFile('$field', '$id')\">delete</a>)</span> \n";
@@ -1190,10 +1188,16 @@ class ajaxCRUD{
 
                 if ($this->delete || (count($this->row_button)) > 0){
                     $table_html .= "<td>\n";
-
+				//TODO: display images instead of buttons
                     if ($this->delete){
                         $table_html .= "<input type=\"button\" class=\"editingSize\" onClick=\"confirmDelete('$id', '" . $this->db_table . "', '" . $this->db_table_pk ."');\" value=\"delete\" />\n";
                     }
+                    
+                   //Modified by sagar to add 'send sms button'
+					if ($this->delete){
+                        $table_html .= "<input type=\"button\" class=\"editingSize\" onClick=\"sendSmsPage('$id', '" . CUSTOM_PHP_FILES_HTTP_PATH . "');\" value=\"Send SMS\" />\n";
+                    }
+                    
 
                     if (count($this->row_button) > 0){
                         foreach ($this->row_button as $the_row_button){

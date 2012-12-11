@@ -955,8 +955,27 @@ ul.nice-menu li ul li.menuparent li a:hover {
 	max-height: 800px;
 	max-height: /*\**/: 500px\9;
 	max-height: /*\**/: 500px\8;
-	width: 738px;
-	width /*\**/: 740px\9;
+	width /*\**/: 350px\9;
+    width:350px;
+	overflow-x: auto;
+	overflow-y: auto;
+	overflow-y: /*\**/: auto\9;
+	overflow-y: /*\**/: auto\8;
+	margin-top: 0px;
+	font-family: Calibri;
+	border: 0px;
+	background-color: #f4b3b7;
+}
+
+.right_iframe 
+{
+	height: 500px;
+	min-height: 500px;
+	min-height: /*\**/: 500px\9;
+	min-height: /*\**/: 500px\8;
+	max-height: 800px;
+	max-height: /*\**/: 500px\9;
+	max-height: /*\**/: 500px\8;
 	overflow-x: auto;
 	overflow-y: auto;
 	overflow-y: /*\**/: auto\9;

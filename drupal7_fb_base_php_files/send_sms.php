@@ -84,7 +84,7 @@ $message == ""? $message="Enter your message.":'';
                 <div class="form-item form-type-textarea form-item-message">
                     <label for="edit-message">Message <span class="form-required" title="This field is required.">*</span></label>
                     <div class="form-textarea-wrapper resizable textarea-processed resizable-textarea">
-                        <textarea class="form-textarea required" cols="40" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" onfocus="javascript:if( 'Enter your message.' == this.value ) this.value = ''; " ><?php echo $message ?></textarea>
+                        <textarea class="form-textarea required" cols="35" id="edit-message" name="message" rows="6" maxlength="140" name="fromname" onfocus="javascript:if( 'Enter your message.' == this.value ) this.value = ''; " ><?php echo $message ?></textarea>
                     </div>
                     <div class="notice" id='message'>
                     <?php

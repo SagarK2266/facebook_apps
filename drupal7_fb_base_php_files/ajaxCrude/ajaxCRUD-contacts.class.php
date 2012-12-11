@@ -1190,14 +1190,14 @@ class ajaxCRUD{
                     $table_html .= "<td>\n";
 				//TODO: display images instead of buttons
                     if ($this->delete){
-                        $table_html .= "<input type=\"button\" class=\"editingSize\" onClick=\"confirmDelete('$id', '" . $this->db_table . "', '" . $this->db_table_pk ."');\" value=\"delete\" />\n";
+                        $table_html .= "<img style=\"width:30px;height:20px\" class=\"delete_icon\" src=\"". CUSTOM_PHP_FILES_HTTP_PATH."images/delete.png" ."\" title=\"Delete\" onClick=\"confirmDelete('$id', '" . $this->db_table . "', '" . $this->db_table_pk ."');\" />\n";
                     }
-                    
+
                    //Modified by sagar to add 'send sms button'
 					if ($this->delete){
-                        $table_html .= "<input type=\"button\" class=\"editingSize\" onClick=\"sendSmsPage('$id', '" . CUSTOM_PHP_FILES_HTTP_PATH . "');\" value=\"Send SMS\" />\n";
+                        $table_html .= "<img style=\"width:30px;height:20px\" class=\"sms_icon\" src=\"". CUSTOM_PHP_FILES_HTTP_PATH."images/sms.png" ."\" title=\"Send sms\" onClick=\"sendSmsPage('$id', '" . CUSTOM_PHP_FILES_HTTP_PATH . "');\"/>\n";
                     }
-                    
+
 
                     if (count($this->row_button) > 0){
                         foreach ($this->row_button as $the_row_button){

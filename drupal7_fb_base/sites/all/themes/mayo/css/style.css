@@ -948,15 +948,15 @@ ul.nice-menu li ul li.menuparent li a:hover {
 
 .mid_div 
 {
-	height: 500px;
-	min-height: 500px;
-	min-height: /*\**/: 500px\9;
-	min-height: /*\**/: 500px\8;
+	height: 400px;
+	min-height: 400px;
+	min-height: /*\**/: 400px\9;
+	min-height: /*\**/: 400px\8;
 	max-height: 800px;
-	max-height: /*\**/: 500px\9;
-	max-height: /*\**/: 500px\8;
-	width /*\**/: 350px\9;
-    width:350px;
+	max-height: /*\**/: 400px\9;
+	max-height: /*\**/: 400px\8;
+	width /*\**/: 430px\9;
+	width:430px;
 	overflow-x: auto;
 	overflow-y: auto;
 	overflow-y: /*\**/: auto\9;
@@ -969,13 +969,13 @@ ul.nice-menu li ul li.menuparent li a:hover {
 
 .right_iframe 
 {
-	height: 500px;
-	min-height: 500px;
-	min-height: /*\**/: 500px\9;
-	min-height: /*\**/: 500px\8;
+	height: 400px;
+	min-height: 400px;
+	min-height: /*\**/: 400px\9;
+	min-height: /*\**/: 400px\8;
 	max-height: 800px;
-	max-height: /*\**/: 500px\9;
-	max-height: /*\**/: 500px\8;
+	max-height: /*\**/: 400px\9;
+	max-height: /*\**/: 400px\8;
 	overflow-x: auto;
 	overflow-y: auto;
 	overflow-y: /*\**/: auto\9;
@@ -1001,7 +1001,7 @@ ul.nice-menu li ul li.menuparent li a:hover {
 {
 	border: medium none;
 	/*overflow: scroll;*/
-	height: 500px;
+	height: 400px;
 	width: 740px;
 	position:relative;
 }

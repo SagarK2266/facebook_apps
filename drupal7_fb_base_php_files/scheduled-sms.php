@@ -7,7 +7,7 @@ $fromname = trim(getParameterValue('fromname'));
 $receivernumber = trim(getParameterValue('receivernumber'));
 $message = trim(getParameterValue('message'));
 
-if($fromname == "") 
+if($fromname == "")
 {
 	$fromname=$userInfo['first_name'];
 	$fromnameWasBlank=true;
@@ -61,7 +61,7 @@ $minute = trim(getParameterValue('txtminute'));
                 <div class="form-item form-type-textfield form-item-fromname">
                     <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $fromname ?>" />
                     <div class="notice">
-                    <?php 
+                    <?php
                     if($displayValidationMessages == '')
                     {
                     	echo ($fromnameWasBlank?  "This field can not be empty.":'<br/>');
@@ -85,7 +85,7 @@ $minute = trim(getParameterValue('txtminute'));
                     {
                     	echo '<br/>';
                     }
-                    
+
                     ?></div>
                 </div>
                 <div class="form-item form-type-textarea form-item-message">
@@ -106,7 +106,7 @@ $minute = trim(getParameterValue('txtminute'));
                     ?></div>
                     <div class="fieldset-legend" id="message-counter"></span>
                 </div>
-                
+
 				<div class="form-item form-type-textfield form-item-schedule-on">
                     <label for="edit-schedule-on">Date<span class="form-required" title="This field is required.">*</span></label> <?php include_once(CUSTOM_PHP_FILES . 'common'.DS.'dropdown-date.php'); ?>
                     <div class="notice">

@@ -12,7 +12,7 @@ $fromname = trim(getParameterValue('fromname'));
 $receivernumber = trim(getParameterValue('receivernumber'));
 $message = trim(getParameterValue('message'));
 
-if($fromname == "") 
+if($fromname == "")
 {
 	$fromname=$userInfo['first_name'];
 	$fromnameWasBlank=true;
@@ -55,7 +55,7 @@ $message == ""? $message="Enter your message.":'';
                 <div class="form-item form-type-textfield form-item-fromname">
                     <label for="edit-fromname">From <span class="form-required" title="This field is required.">*</span></label> <input class="form-text required" id="edit-fromname" maxlength="20" name="fromname" size="20" type="text" value="<?php echo $fromname ?>" />
                     <div class="notice">
-                    <?php 
+                    <?php
                     if($displayValidationMessages == '')
                     {
                     	echo ($fromnameWasBlank?  "This field can not be empty.":'<br/>');

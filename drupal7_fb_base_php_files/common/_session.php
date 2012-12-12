@@ -70,7 +70,7 @@ function allowBlankSession()
 	{
 		return true;
 	}
-	
+
 	$allowBlankUserAndFriendInfoPages = array('fb_sms_index.php',  'friends-load-data.php' , 'index.php', 'index1.php', 'fb-auto-publish.php');
 	foreach ($allowBlankUserAndFriendInfoPages as $page)
 	{

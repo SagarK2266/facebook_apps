@@ -11,21 +11,21 @@
           function sendRequestViaMultiFriendSelector(friendsId) {
         FB.ui({method: 'apprequests',
           message: '<?php echo APP_REQUEST_MESSAGE ?>',
-          to: friendsId,          
+          to: friendsId,
         }, requestCallback);
       }
-      
+
       function requestCallback(response) {
         // Handle callback here
       }
 </script>
 <?php
 	$allFriendsId = getCommaSeperatedFriendsId();
-	//printFormattedArray($allFriendsId); exit;	
+	//printFormattedArray($allFriendsId); exit;
 	?>
 	<div id="invite_friends" >
 			<a OnClick="sendRequestViaMultiFriendSelector(<?php echo "'".$allFriendsId."'"; ?>)" href="#" class="FB_Links">Invite Friends </a>
-	</div>	
+	</div>
 <?php
 function getCommaSeperatedFriendsId()
 {
@@ -42,5 +42,5 @@ function getCommaSeperatedFriendsId()
 	{
 		return;
 	}
-	
+
 }

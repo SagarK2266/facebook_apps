@@ -1,6 +1,6 @@
 <?php
 //This file is a copy of ajaxCRUD.class.php file. having changes done for the contacts page.
- 
+
 	/************************************************************************/
 	/* ajaxCRUD.class.php	v5.0                                            */
 	/* ===========================                                          */
@@ -1045,7 +1045,7 @@ class ajaxCRUD{
             if ($this->delete || (count($this->row_button)) > 0){
                 $table_html .= "<th>Action</th>\n";
             }
-            
+
             //$table_html .= "<th>Action</th>\n";
 
             $table_html .= "</tr>\n";
@@ -1181,7 +1181,7 @@ class ajaxCRUD{
                         }
 
                     }
-                    
+
                     $html .= "</td>";
                     $html .=  "<span id='text_" . $field . $id . "'><a target=\"_new\" href=\"$file_link\">" . $cell_data . "</a> (<a style=\"font-size: 9px;\" href=\"javascript:\" onClick=\"document.getElementById('file_$field$id').style.display = ''; document.getElementById('text_$field$id').style.display = 'none'; \">edit</a> <a style=\"font-size: 9px;\" href=\"javascript:\" onClick=\"deleteFile('$field', '$id')\">delete</a>)</span> \n";
                 }

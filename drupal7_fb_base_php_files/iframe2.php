@@ -15,7 +15,7 @@ else
 {
 	$loadUrl = "/drupal7_fb_base_php_files/new_user_step1.php";
 } */
-$loadUrl = "/drupal7_fb_base_php_files/new_user_step1.php";
+$loadUrl = "/drupal7_fb_base_php_files/adds/add1.php";
 ?>
 <p>
 	<iframe class="right_iframe" id="right_iframe" name="right_iframe" src="<?php echo $loadUrl ?>"></iframe></p>

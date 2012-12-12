@@ -1,5 +1,5 @@
 <?php
-//Application common files 
+//Application common files
 include_once(dirname(__FILE__).DIRECTORY_SEPARATOR.'common'.DIRECTORY_SEPARATOR.'config.php');
 include_once(CUSTOM_PHP_FILES . 'common'.DS.'commonfunctions.php');
 include_once(CUSTOM_PHP_FILES . 'common'.DS.'constant.inc.php');

@@ -10,5 +10,5 @@ include_once(CUSTOM_PHP_FILES . 'common'.DS.'constant.inc.php');
 include_once(CUSTOM_PHP_FILES . 'common'.DS.'config_db.inc.php');
 include_once(CUSTOM_PHP_FILES . 'common'.DS.'mysql_class'.DS.'Database.class.php');
 
-include_once(CUSTOM_PHP_FILES . 'ajax'.DS.'general-ajax-call.php');
+//include_once(CUSTOM_PHP_FILES . 'ajax'.DS.'general-ajax-call.php');
 ?>

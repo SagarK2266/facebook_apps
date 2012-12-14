@@ -23,6 +23,11 @@ $(document).ready(function() {
 </script>
 </head>
 <body>
+<?php
+//JavaScript SDK code.
+include_once(CUSTOM_PHP_FILES . 'common'.DS.'fb_js_sdk_must_include.php');
+//End of JavaScript SDK code.
+?>
 <h2>Send free SMS from India to anywhere in India.</h2>
 <div class="fb-like">
 <?php include_once(CUSTOM_PHP_FILES.'common/fb-like.php'); ?>

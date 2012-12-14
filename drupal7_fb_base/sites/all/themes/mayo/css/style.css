@@ -976,9 +976,10 @@ ul.nice-menu li ul li.menuparent li a:hover {
 	max-height: 800px;
 	max-height: /*\**/: 400px\9;
 	max-height: /*\**/: 400px\8;
-	overflow-x: auto;
+	width: 295px;
+	overflow-x: hidden;
 	overflow-y: auto;
-	overflow-y: /*\**/: auto\9;
+	overflow-y: /*\**/: hidden\9;
 	overflow-y: /*\**/: auto\8;
 	margin-top: 0px;
 	font-family: Calibri;
